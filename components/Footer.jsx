@@ -1,40 +1,57 @@
-import Link from 'next/link';
-import React from 'react'
+import React from 'react';
+import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
-function Footer() {
-
-  const year = new Date().getFullYear();
-
+export default function Footer() {
   return (
-    <div className="flex w-full items-center gap-20 flex-col p-20">
-      <div className="border-b border w-5/6 border-neutral-200"></div>
-
-      <div className="flex items-center w-full justify-around">
-        <div className="flex flex-col gap-4">
-          <Link href="/"><h1 className="text-4xl font-black tracking-tighter">Travel Planner ✈️</h1></Link>
-          <p className="text-xl max-w-xl">Turn your next trip into a hassle-free experience with Travel Planner AI.</p>
-          <p className="text-neutral-500 font-mono">© {year} Trip Planner AI. All rights reserved</p>
+    <footer className="text-gray-300 bg-gray-900">
+      <div className="container px-4 py-16 mx-auto">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h3 className="mb-4 text-xl font-bold text-white">TravelPlanner</h3>
+            <p className="mb-4">Making travel planning simple and enjoyable. Your journey begins here.</p>
+            <div className="flex gap-4">
+              <a href="#" className="transition-colors hover:text-blue-400"><Facebook className="w-5 h-5" /></a>
+              <a href="#" className="transition-colors hover:text-blue-400"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="transition-colors hover:text-blue-400"><Instagram className="w-5 h-5" /></a>
+              <a href="#" className="transition-colors hover:text-blue-400"><Youtube className="w-5 h-5" /></a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 className="mb-4 text-lg font-semibold text-white">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="transition-colors hover:text-blue-400">About Us</a></li>
+              <li><a href="#" className="transition-colors hover:text-blue-400">Destinations</a></li>
+              <li><a href="#" className="transition-colors hover:text-blue-400">Travel Guides</a></li>
+              <li><a href="#" className="transition-colors hover:text-blue-400">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="mb-4 text-lg font-semibold text-white">Resources</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="transition-colors hover:text-blue-400">Travel Blog</a></li>
+              <li><a href="#" className="transition-colors hover:text-blue-400">Trip Planning</a></li>
+              <li><a href="#" className="transition-colors hover:text-blue-400">Travel Insurance</a></li>
+              <li><a href="#" className="transition-colors hover:text-blue-400">FAQs</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="mb-4 text-lg font-semibold text-white">Contact Us</h4>
+            <ul className="space-y-2">
+              <li>1234 Travel Street</li>
+              <li>Adventure City, AC 12345</li>
+              <li>contact@travelplanner.com</li>
+              <li>+1 (555) 123-4567</li>
+            </ul>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 text-lg">
-          <div className="flex flex-col gap-4">
-            <h1 className="font-semibold">Legal</h1>
-            <p>Terms & Conditions</p>
-            <p>Privacy Policy</p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <h1 className="font-semibold">Support</h1>
-            <p>Contact</p>
-            <p>Medical Report</p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <h1 className="font-semibold">Itineraries</h1>
-            <p>Hot Trips</p>
-            <p>Find Distance</p>
-          </div>
+        
+        <div className="pt-8 mt-12 text-center border-t border-gray-800">
+          <p>&copy; {new Date().getFullYear()} TravelPlanner. All rights reserved.</p>
         </div>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
-
-export default Footer

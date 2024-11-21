@@ -1,18 +1,50 @@
-import Link from "next/link";
-import React from "react";
+"use client"
+import React, { useState } from 'react';
+import { Menu, X, Globe } from 'lucide-react';
 
-function Navbar() {
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex items-center justify-between px-20 py-10">
-      <Link href="/"><h1 className="text-4xl font-black tracking-tighter">Travel Planner ✈️</h1></Link>
-      <div className="flex items-center gap-10">
-        <Link href="/CreateTrip" className="px-5 py-2 text-lg font-medium transition-colors duration-300 rounded-full bg-gradient-to-r from-purple-300 via-amber-300 to-red-300 text-neutral-600 hover:text-black">Create Trip</Link>
-        <Link href="/Trips" className="text-lg font-medium transition-colors duration-300 text-neutral-600 hover:text-black">Trips</Link>
-        <Link href="/About" className="text-lg font-medium transition-colors duration-300 text-neutral-600 hover:text-black">About Us</Link>
-        <Link href="/Contact" className="text-lg font-medium transition-colors duration-300 text-neutral-600 hover:text-black">Contact</Link>
+    <nav className="sticky z-50 w-full bg-white shadow-sm">
+      <div className="container px-4 mx-auto">
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center gap-2">
+            <Globe className="w-8 h-8 text-blue-600" />
+            <span className="text-2xl font-bold text-gray-900">TravelPlanner</span>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="items-center hidden gap-8 md:flex">
+            <a href="/" className="text-gray-700 transition-colors hover:text-blue-600">Home</a>
+            <a href="/CreateTrip" className="text-gray-700 transition-colors hover:text-blue-600">Create Trip</a>
+            <a href="/Trips" className="text-gray-700 transition-colors hover:text-blue-600">My Trips</a>
+            <a href="/About" className="text-gray-700 transition-colors hover:text-blue-600">About</a>
+            <a href="/Contact" className="text-gray-700 transition-colors hover:text-blue-600">Contact</a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="py-4 md:hidden">
+            <div className="flex flex-col gap-4">
+              <a href="/" className="text-gray-700 transition-colors hover:text-blue-600">Home</a>
+              <a href="/CreateTrip" className="text-gray-700 transition-colors hover:text-blue-600">Create Trip</a>
+              <a href="/Trips" className="text-gray-700 transition-colors hover:text-blue-600">My Trips</a>
+              <a href="/About" className="text-gray-700 transition-colors hover:text-blue-600">About</a>
+              <a href="/Contact" className="text-gray-700 transition-colors hover:text-blue-600">Contact</a>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+    </nav>
   );
 }
-
-export default Navbar;

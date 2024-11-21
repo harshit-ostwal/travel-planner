@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { HeartPulseIcon } from "lucide-react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,12 +24,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="flex flex-col min-h-screen">
+        <div className="relative flex flex-col min-h-screen">
           <Navbar />
-          <div className="flex-1 py-20">
+          <div className="flex-1">
             {children}
           </div>
           <Footer />
+        </div>
+        <div className="fixed z-50 flex flex-col items-center justify-center w-20 h-20 font-bold text-white bg-red-500 rounded-full bottom-10 right-10">
+          <HeartPulseIcon />
+          <h1>SOS</h1>
         </div>
       </body>
     </html>

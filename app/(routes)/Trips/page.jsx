@@ -51,7 +51,7 @@ const Trips = [
 
 function page() {
     return (
-        <div className="flex flex-col items-center justify-center w-full gap-20">
+        <div className="flex flex-col items-center justify-center w-full gap-20 py-20">
             <div className="flex flex-col items-center gap-2">
                 <h1 className="text-6xl font-bold tracking-tighter">Hot Trips</h1>
                 <p>Turn your next trip into a hassle-free experience with Travel Planner AI.</p>

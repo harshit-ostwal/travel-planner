@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 function page() {
 
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center w-full py-20">
       <div className="flex flex-col items-center justify-center w-1/2 h-full gap-20">
         <div className="flex flex-col items-center gap-2">
           <h1 className="text-6xl font-bold tracking-tighter">Contact Us</h1>

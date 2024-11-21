@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { HeartPulseIcon } from "lucide-react";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,10 +32,10 @@ export default function RootLayout({ children }) {
           </div>
           <Footer />
         </div>
-        <div className="fixed z-50 flex flex-col items-center justify-center w-20 h-20 font-bold text-white bg-red-500 rounded-full bottom-10 right-10">
+        <Link href="/" onClick={()=> alert("SOS Sent!!")} className="fixed z-50 flex flex-col items-center justify-center w-20 h-20 font-bold text-white bg-red-500 rounded-full bottom-10 right-10">
           <HeartPulseIcon />
           <h1>SOS</h1>
-        </div>
+        </Link>
       </body>
     </html>
   );
